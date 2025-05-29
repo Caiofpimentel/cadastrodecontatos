@@ -13,11 +13,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Contatos")
+@Table(name = "Contato")
 public class Contato {
 
     @Id
     private String telefone;
+    
     private String nome;
     private String email;
 
