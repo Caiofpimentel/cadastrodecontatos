@@ -26,6 +26,14 @@ public class ContatoServiceImpl implements ContatoService {
 
     }
 
+    @Override
+    public Contato buscarContatoPorId(String id) {
+        return contatosRepository.findById(id).orElse(null);
+        
+    }
+
+    
+
     
 
     

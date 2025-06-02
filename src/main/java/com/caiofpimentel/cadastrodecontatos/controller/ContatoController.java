@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -35,6 +35,19 @@ public class ContatoController implements ContatoApiRest {
         return ResponseEntity.ok(contatos);
     
     }
+
+    @GetMapping("/contato/{id}")
+    public ResponseEntity<Contato> buscarContatoPorId(@PathVariable String id) {
+        Contato contato = contatoService.buscarContatoPorId(id);
+        if (contato == null) {
+            throw new ResponseStatusException(
+                org.springframework.http.HttpStatus.NOT_FOUND, "Contato não encontrado"
+            );
+        }
+        return ResponseEntity.ok(contato);
+    }
+
+    
 
     @ExceptionHandler(ResponseStatusException.class)
 	public ResponseEntity<Object> handleNotFoundException(ResponseStatusException ex) {

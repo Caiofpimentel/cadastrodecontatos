@@ -6,7 +6,9 @@ import com.caiofpimentel.cadastrodecontatos.model.Contato;
 
 public interface ContatoService {
 
-    List<Contato> listarContatos();
+    public List<Contato> listarContatos();
+
+    public Contato buscarContatoPorId(String id);
 
     
 
