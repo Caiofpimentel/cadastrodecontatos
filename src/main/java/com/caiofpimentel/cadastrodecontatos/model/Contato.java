@@ -29,6 +29,8 @@ public class Contato {
     private String telefone;
     
     private String nome;
+    
+    @Column(unique = true)
     private String email;
 
 }
