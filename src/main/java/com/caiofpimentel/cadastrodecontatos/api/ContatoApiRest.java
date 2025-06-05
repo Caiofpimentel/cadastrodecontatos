@@ -6,8 +6,10 @@ import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.caiofpimentel.cadastrodecontatos.entities.Contato;
 
-import com.caiofpimentel.cadastrodecontatos.model.Contato;
+
+
 
 public interface ContatoApiRest {
 
